@@ -12,7 +12,7 @@ function displayRamenInfo(e){
     const ramenId = e.path[0].id
     const ramenImage = e.path[0].src
     const ramenImageName = e.path[0].alt
-    const ramenRestaurant = e.path[2].firstElementChild.innerText
+    const ramenRestaurant = e.srcElement.name
 
 
 
@@ -37,8 +37,7 @@ const renderRamens = ramen => {
     newDiv.dataset.id = ramen.id
 
     newDiv.innerHTML = `
-    <img class="detail-image" src=${ramen.image} alt=${ramen.name} id=${ramen.id} />
-    <p>${ramen.restaurant}</p>
+    <img class="detail-image" src=${ramen.image} alt=${ramen.name} id=${ramen.id} name = ${ramen.restaurant} />
     `
     ramenMenu.append(newDiv)
 
